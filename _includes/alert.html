@@ -1,0 +1,27 @@
+{% case include.alert-type %}
+{% when 'info' %}
+<div class="alert alert-info" role="alert">
+    <img class="alert-image" src="{% include relative-src.html src='/assets/images/information.png' %}"/>
+    {% if include.title %}<b>{{include.title}}: </b>{% endif %}{{include.content}}
+</div>
+{% when 'important' %}
+<div class="alert alert-important" role="alert">
+        <img class="alert-image" src="{% include relative-src.html src='/assets/images/important.png' %}"/>
+    {% if include.title %}<b>{{include.title}}: </b>{% endif %}{{include.content}}
+</div>
+{% when 'danger' %}
+<div class="alert alert-danger" role="alert">
+    <img class="alert-image" src="{% include relative-src.html src='/assets/images/danger.jpg' %}"/>
+    {% if include.title %}<b>{{include.title}}: </b>{% endif %}{{include.content}}
+</div>
+{% when 'tip' %}
+<div class="alert alert-tip" role="alert">
+    <img class="alert-image" src="{% include relative-src.html src='/assets/images/tip.png' %}"/>
+    {% if include.title %}<b>{{include.title}}: </b>{% endif %}{{include.content}}
+</div>
+{% else %}
+<div class="alert alert-info" role="alert">
+    <img class="alert-image" src="{% include relative-src.html src='/assets/images/information.png' %}"/>
+    {% if include.title %}<b>{{include.title}}: </b>{% endif %}{{include.content}}
+</div>
+{% endcase %}
